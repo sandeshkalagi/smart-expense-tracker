@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Smart Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="title">Smart Expense Tracker</h1>
+
+
+    <!-- STAT CARDS -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>Total Spent</h3>
+            <h1 id="totalAmount">₹0</h1>
+        </div>
+
+        <div class="stat-card">
+            <h3>This Month</h3>
+            <h1 id="monthTotal">₹0</h1>
+        </div>
+
+        <div class="stat-card">
+            <h3>Top Category</h3>
+            <h1 id="topCategory">-</h1>
+        </div>
+
+    </div>
+
+
+    <!-- CHARTS -->
+
+    <div class="charts">
+
+        <div class="card">
+            <h2>Expense Breakdown</h2>
+            <canvas id="expenseChart"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Monthly Spending</h2>
+            <canvas id="monthlyChart"></canvas>
+        </div>
+
+    </div>
+
+
+    <!-- ADD EXPENSE -->
+
+    <div class="form-card">
+
+        <input id="expense" placeholder="Expense Name">
+
+        <input id="amount" placeholder="Amount">
+
+        <select id="category">
+
+            <option value="Food">Food</option>
+            <option value="Travel">Travel</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Education">Education</option>
+            <option value="Hospital">Hospital</option>
+            <option value="Other">Other</option>
+
+        </select>
+
+        <input id="date" type="date">
+
+        <button onclick="addExpense()">Add Expense</button>
+
+    </div>
+
+
+    <!-- TABLE -->
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Expense</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+
+            <tbody id="expenseTable"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+<footer class="footer">
+    <p>Sandesh Kalagi | Java Full Stack Developer</p>
+</footer>
+<script src="script.js"></script>
+
+</body>
+</html>

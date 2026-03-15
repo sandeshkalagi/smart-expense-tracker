@@ -1,116 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <title>Smart Expense Tracker</title>
-
     <link rel="stylesheet" href="style.css">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </head>
-
 <body>
-
 <div class="container">
-
-    <h1 class="title">Smart Expense Tracker</h1>
-
-
-    <!-- STAT CARDS -->
+    <header class="hero">
+        <p class="eyebrow">Personal Finance Dashboard</p>
+        <h1 class="title">Smart Expense Tracker</h1>
+        <p class="subtitle">Track every rupee, understand your patterns, and export your data anytime.</p>
+    </header>
 
     <div class="stats">
-
         <div class="stat-card">
-            <h3>Total Spent</h3>
-            <h1 id="totalAmount">₹0</h1>
+            <p class="stat-label">Total Spent</p>
+            <h2 id="totalAmount">Rs 0</h2>
         </div>
-
         <div class="stat-card">
-            <h3>This Month</h3>
-            <h1 id="monthTotal">₹0</h1>
+            <p class="stat-label">This Month</p>
+            <h2 id="monthTotal">Rs 0</h2>
         </div>
-
         <div class="stat-card">
-            <h3>Top Category</h3>
-            <h1 id="topCategory">-</h1>
+            <p class="stat-label">Top Category</p>
+            <h2 id="topCategory">-</h2>
         </div>
-
     </div>
-
-
-    <!-- CHARTS -->
 
     <div class="charts">
-
         <div class="card">
-            <h2>Expense Breakdown</h2>
-            <canvas id="expenseChart"></canvas>
+            <div class="card-head">
+                <h2>Expense Breakdown</h2>
+                <span class="chip">By Category</span>
+            </div>
+            <div class="chart-shell chart-shell-pie">
+                <canvas id="expenseChart"></canvas>
+            </div>
         </div>
 
         <div class="card">
-            <h2>Monthly Spending</h2>
-            <canvas id="monthlyChart"></canvas>
+            <div class="card-head">
+                <h2>Monthly Spending</h2>
+                <span class="chip">This Year</span>
+            </div>
+            <div class="chart-shell">
+                <canvas id="monthlyChart"></canvas>
+            </div>
         </div>
-
     </div>
-
-
-    <!-- ADD EXPENSE -->
 
     <div class="form-card">
-
-        <input id="expense" placeholder="Expense Name">
-
-        <input id="amount" placeholder="Amount">
-
-        <select id="category">
-
-            <option value="Food">Food</option>
-            <option value="Travel">Travel</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Education">Education</option>
-            <option value="Hospital">Hospital</option>
-            <option value="Other">Other</option>
-
-        </select>
-
-        <input id="date" type="date">
-
-        <button onclick="addExpense()">Add Expense</button>
-
+        <h2 class="section-title">Add New Expense</h2>
+        <div class="form-grid">
+            <input id="expense" placeholder="Expense Name">
+            <input id="amount" placeholder="Amount">
+            <select id="category">
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Education">Education</option>
+                <option value="Hospital">Hospital</option>
+                <option value="Other">Other</option>
+            </select>
+            <input id="date" type="date">
+            <button class="btn btn-primary" onclick="addExpense()">Add Expense</button>
+        </div>
     </div>
-
-
-    <!-- TABLE -->
 
     <div class="table-card">
+        <div class="table-topbar">
+            <h2 class="section-title">Expense History</h2>
+            <div class="table-actions">
+                <input type="text" id="searchBox" placeholder="Search expenses..." onkeyup="filterExpenses()">
+                <button class="btn btn-secondary" onclick="exportCSV()">Download CSV</button>
+            </div>
+        </div>
 
-        <table>
-
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Expense</th>
-                <th>Amount</th>
-                <th>Date</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-
-            <tbody id="expenseTable"></tbody>
-
-        </table>
-
+        <div class="table-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Expense</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody id="expenseTable">
+                <tr class="empty-row">
+                    <td colspan="6">No expenses yet. Add your first entry above.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
 </div>
+
 <footer class="footer">
     <p>Sandesh Kalagi | Java Full Stack Developer</p>
 </footer>
-<script src="script.js"></script>
 
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
 </body>
 </html>
+
+

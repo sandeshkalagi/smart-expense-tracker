@@ -1,21 +1,27 @@
-# Smart Expense Tracker
-
-A full-stack web application to track and analyze daily expenses.
-
 ## Features
-- Add expenses
+- Add expenses (title, amount, category, date)
 - Delete expenses
-- Category-wise breakdown
-- Monthly analytics
-- Interactive charts
+- Live search filter in expense table
+- Download expenses as CSV
+- Dashboard insights:
+  - Total spent
+  - Current month spending
+  - Top spending category
+- Interactive charts:
+  - Category-wise pie chart
+  - Monthly spending bar chart
+- Responsive UI with loading, empty states, and toast feedback
 
-## Tech Stack
-Frontend: HTML, CSS, JavaScript, Chart.js  
-Backend: Java, Spring Boot, REST API  
-Database: H2  
+## Deployment
+- Frontend: GitHub Pages
+- Backend: Render
 
-## Live Demo
-https://sandeshkalagi.github.io/smart-expense-tracker/
+## API Endpoints
+- `GET /expenses` - Fetch all expenses
+- `POST /expenses` - Add a new expense
+- `DELETE /expenses/{id}` - Delete an expense
+- `GET /expenses/total` - Get total spent amount
 
-## API
-https://expense-tracker-api-rjsy.onrender.com
+- ## Live Demo
+- Frontend: https://sandeshkalagi.github.io/smart-expense-tracker/
+- Backend API: https://expense-tracker-api-rjsy.onrender.com

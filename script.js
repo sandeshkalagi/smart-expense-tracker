@@ -1,4 +1,4 @@
-const API = "http://localhost:8081/expenses";
+const API = "https://expense-tracker-api-rjsy.onrender.com/expenses";
 
 let pieChart;
 let monthlyChart;
